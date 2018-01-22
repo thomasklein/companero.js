@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Sandbox DOMComponents</title>
+    <style>
+      pre {
+        margin: 0;
+        margin-left: 20px;
+        color: black;
+        background: #e0e0e0;
+        padding: 5px;
+      }
+      .log {
+        margin-top: 10px;
+        border-top: 1px solid black;
+        font-family: monospace;
+      }
+      .log__entry {
+        margin-top: 10px;
+      }
+      .node {
+        border: 1px solid black;
+        padding: 5px;
+        margin-top: 5px;
+      }
+      .actions {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sandbox DOMComponents</h1>
+    <h2>Component containers</h2>
+    <div class="node1 node"
+      data-components="componentA componentB"
+      data-component-param-componentA='{"paramComponentA": "paramComponentA"}'
+      data-component-param-componentB='{"paramcomponentB": "paramcomponentB"}'>
+      componentA && componentB on <em>node1</em>
+      <div class="childNode1 node"
+        data-components="componentC"
+        data-component-param-componentC='{"paramComponentC": "paramComponentC"}'>
+        componentNodeC on <em>childNode1</em>
+      </div>
+    </div>
+    <div class="node2 node"
+      data-components="componentD"
+      data-component-param-componentD='{"paramComponentD": "paramComponentD"}'>
+      componentD on <em>node2</em>
+      <div class="childNode2 node"
+        data-components="componentE"
+        data-component-param-componentE='{"paramComponentE": "paramComponentE"}'>
+        componentE on <em>childNode2</em>
+      </div>
+    </div>
+    <h2>JS Log</h2>
+    <small>Check out the DevTools console for more details.</small>
+    <div class="actions">
+      <button class="tooglevariablesoutput">Toogle variables output</button>
+    </div>
+    <main class="log"></main>
+    <!-- will be generated through main.entry.js and webpack build process -->
+    <script src="bundle.js"></script>
+  </body>
+</html>

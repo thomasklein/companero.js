@@ -1,0 +1,184 @@
+{
+  "name": "companerojs",
+  "version": "0.1.0",
+  "description": "Compañero for your JS components",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thomasklein/companerojs.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/thomasklein/companerojs/issues"
+  },
+  "homepage": "https://github.com/thomasklein/companerojs",
+  "main": "companero.js",
+  "contributors": [
+    {
+      "name": "Thomas Klein",
+      "email": "thomnielk@riseup.net"
+    }
+  ],
+  "paths": {
+    "sandboxDir": "./sandbox",
+    "sandboxFile": "./sandbox/sandbox.js"
+  },
+  "scripts": {
+    "lint": "eslint . --fix",
+    "sandbox": "NODE_ENV=development webpack --watch --config \"$npm_package_paths_sandboxDir/webpack.config.js\" & browser-sync start --config \"$npm_package_paths_sandboxDir/browsersync.config.js\"",
+    "precommit": "npm run lint"
+  },
+  "devDependencies": {
+    "webpack": "3.10.0",
+    "browser-sync": "2.23.5",
+    "husky": "^0.14.3",
+    "jest-cli": "^22.1.4",
+    "eslint": "^4.16.0",
+    "eslint-plugin-jest": "^21.7.0"
+  },
+  "eslintIgnore": [
+    "bundle.js"
+  ],
+  "eslintConfig": {
+    "root": true,
+    "plugins": [
+      "jest"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 5
+    },
+    "env": {
+      "jest": true,
+      "node": true,
+      "browser": true
+    },
+    "rules": {
+      "no-unused-vars": [
+        "error"
+      ],
+      "valid-jsdoc": [
+        "error",
+        {
+          "prefer": {
+            "arg": "param",
+            "argument": "param",
+            "class": "constructor",
+            "return": "return",
+            "virtual": "abstract"
+          },
+          "preferType": {
+            "Function": "function",
+            "Boolean": "boolean",
+            "Number": "number",
+            "object": "object",
+            "String": "string"
+          },
+          "requireReturn": false,
+          "requireParamDescription": false,
+          "requireReturnDescription": false
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ],
+      "require-await": "error",
+      "no-undef": "error",
+      "no-plusplus": "off",
+      "no-shadow": "error",
+      "no-underscore-dangle": "off",
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "padding-line-between-statements": [
+        "error",
+        {
+          "blankLine": "always",
+          "prev": "*",
+          "next": "return"
+        },
+        {
+          "blankLine": "always",
+          "prev": [
+            "const",
+            "let",
+            "var"
+          ],
+          "next": "*"
+        },
+        {
+          "blankLine": "any",
+          "prev": [
+            "const",
+            "let",
+            "var"
+          ],
+          "next": [
+            "const",
+            "let",
+            "var"
+          ]
+        },
+        {
+          "blankLine": "always",
+          "prev": "directive",
+          "next": "*"
+        },
+        {
+          "blankLine": "any",
+          "prev": "directive",
+          "next": "directive"
+        }
+      ],
+      "global-require": "off",
+      "max-len": [
+        "error",
+        {
+          "ignoreUrls": true,
+          "code": 100
+        }
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "sort-keys": [
+        "error",
+        "asc",
+        {
+          "caseSensitive": true,
+          "natural": true
+        }
+      ],
+      "jest/no-disabled-tests": "error",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/valid-expect": "error"
+    }
+  },
+  "jest": {
+    "bail": true,
+    "verbose": true,
+    "coverageReporters": [
+      "text"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 100,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "license": "MIT"
+}
