@@ -1,15 +1,4 @@
 {
-  "env": {
-    "es6": true
-  },
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 2015
-  },
-  "rules": {
-    "quotes": [
-      "error",
-      "backtick"
-    ]
-  }
+  "extends": ["../.eslint-ts.json"],
+  "env": {"browser": true}
 }

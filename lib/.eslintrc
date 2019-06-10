@@ -1,0 +1,23 @@
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 5
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"]},
+      { "blankLine": "always", "prev": "var", "next": "return" }
+    ],
+    "quotes": ["error", "single"]
+  }
+}

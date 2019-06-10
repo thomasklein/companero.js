@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "es6"],
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noEmit": false,
+    "pretty": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true
+  },
+  "types": []
+}

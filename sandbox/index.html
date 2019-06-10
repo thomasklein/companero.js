@@ -25,6 +25,10 @@
       .actions {
         margin: 10px 0;
       }
+
+      summary {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -41,23 +45,22 @@
         componentNodeC on <em>childNode1</em>
       </div>
     </div>
-    <div class="node2 node"
-      data-components="componentD"
-      data-component-param-componentD='{"paramComponentD": "paramComponentD"}'>
-      componentD on <em>node2</em>
-      <div class="childNode2 node"
-        data-components="componentE"
-        data-component-param-componentE='{"paramComponentE": "paramComponentE"}'>
-        componentE on <em>childNode2</em>
+    
+    <div class="runoptions">
+      <h2>Run Options</h2>
+      <div class="actions">
+        <input type="checkbox" id="asynchronous" name="asynchronous" class="runoption" />
+        <label for="asynchronous">Asynchronous</label>
       </div>
     </div>
+    
     <h2>JS Log</h2>
     <small>Check out the DevTools console for more details.</small>
     <div class="actions">
       <button class="tooglevariablesoutput">Toogle variables output</button>
     </div>
     <main class="log"></main>
-    <!-- will be generated through main.entry.js and webpack build process -->
-    <script src="bundle.js"></script>
+    <!-- will be generated through webpack-dev-server -->
+    <script src="./main.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 {
-  "name": "companerojs",
-  "version": "0.1.0",
-  "description": "Compañero for your JS components",
+  "name": "companero.js",
+  "version": "0.2.0",
+  "description": "Highly flexible component registry and lifecycle launcher",
   "repository": {
     "type": "git",
     "url": "git://github.com/thomasklein/companerojs.git"
@@ -10,160 +10,40 @@
     "registry": "https://registry.npmjs.org/"
   },
   "bugs": {
-    "url": "https://github.com/thomasklein/companerojs/issues"
+    "url": "https://github.com/thomasklein/companero.js/issues"
   },
-  "homepage": "https://github.com/thomasklein/companerojs",
-  "main": "companero.js",
+  "homepage": "https://github.com/thomasklein/companero.js",
+  "main": "lib/companero.js",
+  "typings": "lib/companero.d.ts",
   "contributors": [
     {
       "name": "Thomas Klein",
       "email": "thomnielk@riseup.net"
     }
   ],
-  "paths": {
-    "sandboxDir": "./sandbox",
-    "sandboxFile": "./sandbox/sandbox.js"
-  },
   "scripts": {
     "lint": "eslint . --fix",
-    "sandbox": "NODE_ENV=development webpack --watch --config \"$npm_package_paths_sandboxDir/webpack.config.js\" & browser-sync start --config \"$npm_package_paths_sandboxDir/browsersync.config.js\"",
-    "precommit": "npm run lint"
+    "sandbox": "webpack-dev-server --mode development --progress --color",
+    "test": "jest --coverage",
+    "precommit": "npm run lint && npm run test"
   },
   "devDependencies": {
-    "webpack": "3.10.0",
-    "browser-sync": "2.23.5",
-    "husky": "^0.14.3",
-    "jest-cli": "^22.1.4",
-    "eslint": "^4.16.0",
-    "eslint-plugin-jest": "^21.7.0"
+    "@types/jest": "^24.0.13",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jest": "^22.6.4",
+    "husky": "^2.4.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.2",
+    "typescript": "^3.5.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
   },
-  "eslintIgnore": [
-    "bundle.js"
-  ],
   "eslintConfig": {
-    "root": true,
-    "plugins": [
-      "jest"
-    ],
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 5
-    },
-    "env": {
-      "jest": true,
-      "node": true,
-      "browser": true
-    },
-    "rules": {
-      "no-unused-vars": [
-        "error"
-      ],
-      "valid-jsdoc": [
-        "error",
-        {
-          "prefer": {
-            "arg": "param",
-            "argument": "param",
-            "class": "constructor",
-            "return": "return",
-            "virtual": "abstract"
-          },
-          "preferType": {
-            "Function": "function",
-            "Boolean": "boolean",
-            "Number": "number",
-            "object": "object",
-            "String": "string"
-          },
-          "requireReturn": false,
-          "requireParamDescription": false,
-          "requireReturnDescription": false
-        }
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "no-param-reassign": [
-        "error",
-        {
-          "props": false
-        }
-      ],
-      "require-await": "error",
-      "no-undef": "error",
-      "no-plusplus": "off",
-      "no-shadow": "error",
-      "no-underscore-dangle": "off",
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "padding-line-between-statements": [
-        "error",
-        {
-          "blankLine": "always",
-          "prev": "*",
-          "next": "return"
-        },
-        {
-          "blankLine": "always",
-          "prev": [
-            "const",
-            "let",
-            "var"
-          ],
-          "next": "*"
-        },
-        {
-          "blankLine": "any",
-          "prev": [
-            "const",
-            "let",
-            "var"
-          ],
-          "next": [
-            "const",
-            "let",
-            "var"
-          ]
-        },
-        {
-          "blankLine": "always",
-          "prev": "directive",
-          "next": "*"
-        },
-        {
-          "blankLine": "any",
-          "prev": "directive",
-          "next": "directive"
-        }
-      ],
-      "global-require": "off",
-      "max-len": [
-        "error",
-        {
-          "ignoreUrls": true,
-          "code": 100
-        }
-      ],
-      "semi": [
-        "error",
-        "never"
-      ],
-      "sort-keys": [
-        "error",
-        "asc",
-        {
-          "caseSensitive": true,
-          "natural": true
-        }
-      ],
-      "jest/no-disabled-tests": "error",
-      "jest/no-focused-tests": "error",
-      "jest/no-identical-title": "error",
-      "jest/valid-expect": "error"
-    }
+    "root": true
   },
   "jest": {
     "bail": true,
@@ -171,14 +51,12 @@
     "coverageReporters": [
       "text"
     ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 100,
-        "lines": 90,
-        "statements": 90
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.test.json"
       }
-    }
+    },
+    "preset": "ts-jest/presets/js-with-ts"
   },
   "license": "MIT"
 }
