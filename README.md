@@ -1,4 +1,4 @@
-# companero.js
+# compañero.js
 
 <img src="logo.png" alt="Compañero Logo" width="700"/>
 
@@ -65,6 +65,6 @@ npm run sandbox
 
 * Thanks to [Adria Marti Blasco](https://www.linkedin.com/in/amartib/) for the fancy project logo!
 
-## Fomerly `companerojs`
+## Formerly `companerojs`
 
 After some significant changes under the hood rename to `companero.js`.
