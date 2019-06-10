@@ -1,10 +1,10 @@
 {
-  "name": "companero.js",
-  "version": "0.2.0",
+  "name": "companero",
+  "version": "0.1.0",
   "description": "Highly flexible component registry and lifecycle launcher",
   "repository": {
     "type": "git",
-    "url": "git://github.com/thomasklein/companerojs.git"
+    "url": "git://github.com/thomasklein/companero.js.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

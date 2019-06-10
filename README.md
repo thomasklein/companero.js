@@ -1,14 +1,18 @@
-# compañero.js
-
 <img src="logo.png" alt="Compañero Logo" width="700"/>
 
-`compañero.js` is a highly flexible component registry and lifecycle launcher. 
+`compañero` is a highly flexible component registry and lifecycle launcher.
 Through hooks and shared references it is thought to lay the groundwork for component managers.
+
+## Install
+
+```
+npm install companero --save
+```
 
 ## Basic example
 
-Note: The example is written in Typescript for a better understanding of the library. 
-The library itself is exposed as zero-dependency vanilla Javascript. 
+Note: The example is written in Typescript for a better understanding of the library.
+The library itself is exposed as zero-dependency vanilla Javascript.
 Typescript type definitions are also part of the package.
 
 ```ts
@@ -17,10 +21,10 @@ import lib from 'companero'
 function init(config: lib.LifecycleConfig):lib.LifecycleMethod { 
     let { componentsRegister } = config
 
-    console.log(`'init' Lifecycle initialized with ${JSON.stringify(config)}`); 
+    console.log(`'init' Lifecycle initialized with ${JSON.stringify(config)}`);
     return (options:any) => { 
         console.log(`'init' LifecycleMethod called with ${JSON.stringify(options)}`);
-        console.log(`var 'componentsRegister': ${JSON.stringify(componentsRegister)}`); 
+        console.log(`var 'componentsRegister': ${JSON.stringify(componentsRegister)}`);
     } 
 }
 
@@ -67,4 +71,4 @@ npm run sandbox
 
 ## Formerly `companerojs`
 
-After some significant changes under the hood rename to `companero.js`.
+After some significant changes under the hood rename to `companero`.
