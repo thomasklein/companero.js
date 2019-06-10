@@ -1,6 +1,6 @@
 # companero.js
 
-<img src="logo-name-horizontal.png" alt="Compañero Logo" width="700"/>
+<img src="logo.png" alt="Compañero Logo" width="700"/>
 
 `compañero.js` is a highly flexible component registry and lifecycle launcher. 
 Through hooks and shared references it is thought to lay the groundwork for component managers.

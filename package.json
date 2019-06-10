@@ -21,6 +21,13 @@
       "email": "thomnielk@riseup.net"
     }
   ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "logo.png",
+    "lib/companero.js",
+    "lib/companero.d.ts"
+  ],
   "scripts": {
     "lint": "eslint . --fix",
     "sandbox": "webpack-dev-server --mode development --progress --color",
